@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cockroach Janta Party - Official Website</title>
+    <title>VIP - Official Website</title>
     <style>
         /* Material Design Dark Theme Fundamentals */
         :root {
@@ -12,8 +12,8 @@
             --md-surface-color-elevated: #2c2c2c;
             --md-text-primary: #e0e0e0;
             --md-text-secondary: #aaaaaa;
-            --navy-blue: #000080; /* Standard Navy Blue */
-            --navy-blue-light: #3f51b5; /* For links against dark bg to remain readable */
+            --dark-blue: #00008B; /* Replaced navy blue with dark blue */
+            --dark-blue-light: #3f51b5; /* For links against dark bg to remain readable */
         }
 
         * {
@@ -37,7 +37,7 @@
         }
 
         a {
-            color: var(--navy-blue-light); /* Lighter navy for dark mode visibility */
+            color: var(--dark-blue-light);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -51,11 +51,11 @@
         /* Buttons */
         .btn {
             display: inline-block;
-            background-color: var(--navy-blue);
+            background-color: var(--dark-blue);
             color: #ffffff;
             padding: 12px 24px;
             border: none;
-            border-radius: 4px; /* Material Design standard button radius */
+            border-radius: 4px;
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -91,7 +91,13 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        /* New detailed complex logo icon inspired by your reference */
+        .logo-icon {
+            width: 36px;
+            height: 36px;
         }
 
         .nav-links {
@@ -101,10 +107,34 @@
         }
 
         .nav-links li a {
-            color: var(--navy-blue-light);
+            color: var(--dark-blue-light);
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
+        }
+
+        /* Social Header Links - UPDATED FOR ICONS */
+        .social-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-header a {
+            color: #ffffff;
+            display: flex;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-header a:hover {
+            color: #7986cb;
+            text-decoration: none;
+            transform: scale(1.15); /* Adds a nice little pop effect on hover */
+        }
+        
+        .social-header svg {
+            width: 22px;
+            height: 22px;
         }
 
         /* Hero Section */
@@ -114,7 +144,7 @@
             justify-content: center;
             text-align: center;
             padding: 100px 20px;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 1)), url('img/vip_background.png') center/cover;
             min-height: 70vh;
         }
 
@@ -123,12 +153,12 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--md-text-secondary);
             margin-bottom: 30px;
         }
@@ -171,7 +201,7 @@
             border-radius: 4px;
             margin-bottom: 20px;
             height: 200px;
-            object-fit: cover;
+            
         }
 
         /* Manifesto List */
@@ -185,7 +215,7 @@
             background-color: var(--md-surface-color);
             margin-bottom: 15px;
             padding: 20px;
-            border-left: 5px solid var(--navy-blue);
+            border-left: 5px solid var(--dark-blue);
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
@@ -211,7 +241,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links, .social-header {
                 display: none; /* In a real site, implement a hamburger menu */
             }
             .hero h1 {
@@ -224,7 +254,15 @@
 
     <header>
         <div class="logo">
-            🪳 CJP
+            <svg viewBox="0 0 100 100" class="logo-icon">
+              <path d="M50 0 L 70 30 L 100 20 L 80 50 L 100 80 L 70 70 L 50 100 L 30 70 L 0 80 L 20 50 L 0 20 L 30 30 Z" stroke="var(--dark-blue-light)" fill="none" stroke-width="1"/>
+              <path d="M50 10 L 65 35 L 90 25 L 75 50 L 90 75 L 65 65 L 50 90 L 35 65 L 10 75 L 25 50 L 10 25 L 35 35 Z" stroke="var(--dark-blue-light)" fill="none" stroke-width="1"/>
+              <circle cx="50" cy="50" r="35" stroke="var(--dark-blue-light)" fill="none" stroke-width="2.5"/>
+              <ellipse cx="50" cy="50" rx="18" ry="12" stroke="var(--dark-blue-light)" fill="none" stroke-width="2"/>
+              <circle cx="50" cy="50" r="6" fill="var(--dark-blue-light)"/>
+              <circle cx="50" cy="46" r="2" fill="white"/>
+            </svg>
+            VIP
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -232,41 +270,67 @@
             <li><a href="#manifesto">Manifesto</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#join" class="btn">Join Now</a>
+        <div class="social-header">
+            <a href="https://instagram.com/vipforindia" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://facebook.com/vipforindia" target="_blank" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+            <a href="https://x.com/vipforindia" target="_blank" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+            </a>
+            <a href="https://t.me/vipforindia" target="_blank" aria-label="Telegram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </a>
+        </div>
     </header>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Cockroach Janta Party</h1>
-            <p><strong>Secular. Socialist. Democratic. Lazy.</strong></p>
-            <p>A political front of the youth, by the youth, for the youth. We are the ultimate union of the chronically online, uniting to clean the system from the bottom up.</p>
+            <h1>Visonary Indians Party</h1>
+            <p><strong>Integrity. Progess. Prosperity</strong></p>
+            <p>We are a political movement of the youth, by the youth, and for the youth — a generation raised in the digital age, united to challenge corruption, outdated politics, and broken systems. From streets to screens, we are building a smarter, transparent, and future-ready India from the ground up.</p>
+            <p>We are not waiting for change — we are the change.</p>
             <a href="#manifesto" class="btn">Read Our Manifesto</a>
         </div>
     </section>
 
     <section class="section" id="about">
-        <h2 class="section-title">Are You Eligible to Join?</h2>
+        <h2 class="section-title">Who are we?</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=60" alt="Chronically Online">
-                <h3>Chronically Online</h3>
-                <p>You spend at least 11 hours a day scrolling through feeds, arguing with strangers, and sharing satirical memes. If your screen time is low, you do not qualify.</p>
+                <img src="img/map.png" alt="United India">
+                <h3>United India</h3>
+                <p>Undivided within, unstoppable together. We rise above caste and language to reward pure merit. Externally, we envision healing the scars of British colonialism to reunite India, Pakistan, Bangladesh, and Myanmar into a single civilizational powerhouse.</p>
                 <br>
-                <a href="#learn-more">Learn more about our screen-time policy</a>
+                <a href="#learn-more">Discover our vision for true unity</a>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?auto=format&fit=crop&w=500&q=60" alt="Unemployed">
-                <h3>Unemployed & Proud</h3>
-                <p>Tired of participating in a broken rat race? We celebrate those who refuse to be cogs in the machine. Your lack of a corporate job is your biggest asset here.</p>
+                <img src="img/one.jpg" alt="One Vision">
+                <h3>One People, One Vision</h3>
+                <p>Our strength lies in our shared humanity, not our systemic divisions. We are building a political front that completely dismantles barriers of caste, religion, and race, ensuring that the only language we speak is the language of progress.</p>
                 <br>
-                <a href="#learn-more">View our unemployment benefits framework</a>
+                <a href="#learn-more">Learn how we unite communities</a>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=60" alt="Professional Ranter">
-                <h3>Professional Ranter</h3>
-                <p>You have a PhD in complaining about systemic issues. You don't just see problems; you write elaborate, highly-researched paragraphs about them on social media.</p>
+                <img src="img/vison.jpg" alt="Visionary">
+                <h3>Visionary Thinkers</h3>
+                <p>You don't just see the India of today; you are actively building the India of tomorrow. We value innovative minds ready to tackle complex systemic challenges with sustainable, modern, and long-term solutions for generations yet to come.</p>
                 <br>
-                <a href="#learn-more">Join the debating committee</a>
+                <a href="#learn-more">Discover our policy roadmap</a>
             </div>
         </div>
     </section>
@@ -275,24 +339,24 @@
         <h2 class="section-title">Our 5-Point Manifesto</h2>
         <ul class="manifesto-list">
             <li>
-                <h3>1. Cooling-Off Periods for Elites</h3>
-                <p>No retiring judges or top bureaucrats can accept political appointments or corporate board seats immediately after retirement. A mandatory 5-year cooling-off period must be implemented.</p>
+                <h3>1. The Pledge for a Reunited, Civilizational Powerhouse</h3>
+                <p>We reject the artificial borders of the past and the internal divisions of the present. We are committed to healing the historic scars of British colonialism to actively work toward the reunification of India, Pakistan, Bangladesh, and Myanmar. We will build an undivided geopolitical and cultural force on the global stage.</p>
             </li>
             <li>
-                <h3>2. The Anti-Defection Enforcement</h3>
-                <p>Elected officials who switch political parties after winning an election will face an automatic 20-year ban from participating in any electoral process.</p>
+                <h3>2. The Complete Eradication of Systemic Division</h3>
+                <p>We vow to dismantle all political and social frameworks that divide our citizens by caste, creed, religion, race, or language. Our administration will operate strictly on the principle of shared humanity and pure merit, ensuring that national progress is the only metric by which we measure success.</p>
             </li>
             <li>
-                <h3>3. 50% Representation for Women</h3>
-                <p>Mandatory 50% reservation for women in all cabinet positions and major legislative decision-making bodies to ensure true democratic parity.</p>
+                <h3>3. Long-Term Solutions Over Short-Term Politics</h3>
+                <p>We will abandon reactionary politics in favor of visionary governance. We commit to tackling the nation's most complex, deep-rooted systemic challenges by empowering innovative thinkers. Our policies will prioritize sustainable, modern, and forward-looking solutions designed to secure the prosperity of generations yet to come.</p>
             </li>
             <li>
-                <h3>4. Transparent Funding</h3>
-                <p>The party and all state institutions will operate strictly under the Right to Information Act. Zero anonymous donations. If you fund us, your name goes on a public ledger.</p>
+                <h3>4. Zero Tolerance for Systemic Corruption</h3>
+                <p>We treat public office as a sacred national duty, not a vehicle for personal wealth. We will introduce sweeping, technology-driven transparency across all levels of government and enforce unforgiving, fast-tracked justice for corrupt officials. We are committed to dismantling the deep-rooted nexus of political corruption to ensure that every rupee of national wealth is spent solely on the nation's progress.</p>
             </li>
             <li>
-                <h3>5. Educational Justice</h3>
-                <p>Immediate systemic reforms and accountability for national examination boards. Strict penalties for those involved in exam paper leaks to protect the future of students.</p>
+                <h3>5. Absolute Safety and 50% Representation for Women</h3>
+                <p>A nation cannot achieve true greatness while half its population is marginalized or threatened. We guarantee 50% reservation for women across all legislative and policy-making bodies to ensure true democratic parity. Alongside this political empowerment, we will enforce stringent, non-negotiable legal frameworks and rapid-response justice for crimes against women, making absolute safety a foundational reality in every corner of the country.</p>
             </li>
         </ul>
         <div style="text-align: center; margin-top: 40px;">
@@ -301,12 +365,12 @@
     </section>
 
     <footer id="contact">
-        <p>"Because cockroaches survive everything—even a broken system."</p>
-        <p>&copy; 2026 Cockroach Janta Party. All Rights Reserved.</p>
+        <p>"Because visionaries change everything—even a rigged system."</p>
+        <p>&copy; 2026 Visonary Indians Party. All Rights Reserved.</p>
         <div style="margin-top: 20px;">
-            <a href="#" style="margin: 0 10px;">Twitter / X</a> | 
-            <a href="#" style="margin: 0 10px;">Instagram</a> | 
-            <a href="#" style="margin: 0 10px;">Privacy Policy</a>
+            <a href="https://x.com/vipforindia" target="_blank" style="margin: 0 10px;">Twitter / X</a> | 
+            <a href="https://instagram.com/vipforindia" target="_blank" style="margin: 0 10px;">Instagram</a> | 
+            <a href="https://facebook.com/vipforindia" target="_blank" style="margin: 0 10px;">Facebook</a>
         </div>
     </footer>
 
